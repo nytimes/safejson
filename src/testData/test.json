@@ -1,0 +1,1 @@
+{"testDict": {"dictKey2": "dictVal2", "dictKey1": "dictVal1"}, "testArray": ["item1", "item2", 3], "testString": "String", "testInt": 1, "testNested1": [{"dictKey3": [1, 2, 3]}], "testNested2": {"dictKey4": [1, 2, 3]}}
