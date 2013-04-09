@@ -167,107 +167,211 @@ class SafeNoneClass(object):
 		return False
 
 	def __setitem__(self, *args, **kwargs):
+		"""
+		Raises exception, you cannot store values in a SafeNone.
+		"""
 		raise Exception("Cannot store values in SafeNone.")
 
 	def fromkeys(self, *args, **kwargs):
+		"""
+		Raises exception, you cannot store values in a SafeNone.
+		"""
 		raise Exception("Cannot store values in SafeNone.")
 
 	def update(self, *args, **kwargs):
+		"""
+		Raises exception, you cannot store values in a SafeNone.
+		"""
 		raise Exception("Cannot store values in SafeNone.")
 
 	def setdefault(self, *args, **kwargs):
+		"""
+		Raises exception, you cannot store values in a SafeNone.
+		"""
 		raise Exception("Cannot store values in SafeNone.")
 
 	def clear(self):
+		"""
+		Return None.
+		"""
 		return None;
 
 	def copy(self):
+		"""
+		Return reference to SafeNone.
+		"""
 		return SafeNone
 
 	def get(self, *args, **kwargs):
+		"""
+		All attempts to get things from SafeNone will return SafeNone
+		"""
 		return SafeNone
 
 	def has_key(self, *args, **kwargs):
+		"""
+		SafeNone never has the key your looking for, this method always returns false.
+		"""
 		return False
 
 	def iteritems(self):
+		"""
+		Returns an iterator over 0 objects.
+		"""
 		return ().__iter__()
 
 	def iterkeys(self):
+		"""
+		Returns an iterator over 0 objects.
+		"""
 		return ().__iter__()
 
 	def itervalues(self):
+		"""
+		Returns an iterator over 0 objects.
+		"""
 		return ().__iter__()
 
 	def pop(self, *args, **kwargs):
+		"""
+		Return reference to SafeNone.
+		"""
 		return SafeNone
 
 	def popitem(self, *args, **kwargs):
-		raise exceptions.KeyError()
+		"""
+		Return reference to SafeNone.
+		"""
+		return SafeNone
 
 	def values(self):
+		"""
+		Return empty tuple.
+		"""
 		return ()
 
 	def viewitems(self):
+		"""
+		Return empty tuple.
+		"""
 		return ()
 
 	def viewkeys(self):
+		"""
+		Return empty tuple.
+		"""
 		return ()
 	
 	def viewvalues(self):
+		"""
+		Return empty tuple.
+		"""
 		return ()
 
 	# LIST METHODS
 
 	def __add__(self, y):
+		"""
+		Adding this item to another item will return just the other item.
+		"""
 		return y
 
 	def __delslice__(self, *args, **kwargs):
+		"""
+		Deleting a slice of items will result in nothing occuring.
+		"""
 		pass
 
 	def __getslice__(self, i, j):
+		"""
+		Any slice of SafeNone is also SafeNone
+		"""
 		return SafeNone
 
 	def __iadd__(self, y):
+		"""
+		Raises exception, you cannot store values in a SafeNone.
+		"""
 		raise Exception("Cannot modify SafeNone.")
 
 	def __imul__(self, y):
+		"""
+		Raises exception, you cannot store values in a SafeNone.
+		"""
 		raise Exception("Cannot modify SafeNone.")
 
 	def __mul__(self, n):
+		"""
+		Following list semantics, a SafeJSON multiplied by any number should
+		be a SafeJSON, so that is what is returned.
+		"""
 		return SafeNone
 
 	def __reversed__(self):
+		"""
+		A SafeJSON object is its own reverse.
+		"""
 		return SafeNone
 
 	def __rmul__(self, n):
+		"""
+		Following list semantics, a SafeJSON multiplied by any number should
+		be a SafeJSON, so that is what is returned.
+		"""
 		return SafeNone
 
 	def __setslice__(self, i, j, y):
+		"""
+		Raises exception, you cannot store values in a SafeNone.
+		"""
 		raise Exception("Cannot store values in SafeNone.")
 
 	def append(self, o):
+		"""
+		Raises exception, you cannot store values in a SafeNone.
+		"""
 		raise Exception("Cannot store values in SafeNone.")		
 	
 	def count(self, value):
+		"""
+		There are always 0 items in a SafeNone
+		"""
 		return 0
 
 	def extend(self, iterable):
+		"""
+		Raises exception, you cannot store values in a SafeNone.
+		"""
 		raise Exception("Cannot store values in SafeNone.")
 
 	def index(self, *args, **kwargs):
+		"""
+		Always raises an exception because no items are ever in a SafeNone
+		"""
 		raise exceptions.ValueError()
 
 	def insert(self, o):
+		"""
+		Raises exception, you cannot store values in a SafeNone.
+		"""
 		raise Exception("Cannot store values in SafeNone.")
 
 	def remove(self, value):
-		raise exceptions.ValueError()
+		"""
+		Always returns SafeJSON
+		"""
+		return SafeNone
 
 	def reverse(self):
+		"""
+		Does nothing because SafeJSON is its own reverse.
+		"""
 		pass
 
 	def sort(self):
+		"""
+		Does nothing because SafeJSON is always sorted.
+		"""
 		pass
 
 # Our static reference to SafeNone - put it in the scope of the module

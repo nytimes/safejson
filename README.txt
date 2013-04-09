@@ -21,6 +21,29 @@ SafeNone does have equality with None, however, so the following check will eval
 	
 	if SafeNone == None:
 
+Additionally SafeNone implements all methods in the interface for python lists and dicts EXCEPT methods that attempt to store or modify the SafeNone object.  These methods will raise an Exception.
+
+So you may make statements like this:
+
+	x = SafeNone['some_key']
+
+But statements like this will raise exeptions:
+	
+	SafeNone['some_key'] = x
+
+The following methods will raise exceptions when invoked on SafeNone
+	
+	*	__setitem__
+	*	__imul__
+	*	__setslice__
+	*	__setitem__
+	*	append
+	*	extend
+	*	fromkeys
+	*	insert
+	*	setdefault
+	*	update
+
 ------------
 Installation
 ------------

@@ -100,8 +100,9 @@ class TestSafeJSON(unittest.TestCase):
 		self.assertTrue(SafeNone.has_key('any_key') is False, "Expected SafeNone.has_key('any_key') to be False.")
 		self.assertTrue(SafeNone.clear() is None, "Expected dict-like behavior for SafeNone.clear().")
 		self.assertTrue(SafeNone.pop() is SafeNone, "Expected SafeNone.pop() to be SafeNone.")
+		self.assertTrue(SafeNone.popitem() is SafeNone, "Expected SafeNone.popitem() to be SafeNone.")
 		
-		exceptionRaisers = [SafeNone.popitem, SafeNone.setdefault, SafeNone.update, SafeNone.fromkeys]
+		exceptionRaisers = [SafeNone.setdefault, SafeNone.update, SafeNone.fromkeys]
 		for exceptionRaiser in exceptionRaisers:
 			exceptionRaised = False
 			try:
